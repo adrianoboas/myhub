@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hub</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="manifest" href="app.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple180.png">
+  <meta name="theme-color" content="#0c0c10">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="css/hub.css">
+  <link rel="stylesheet" href="css/workspace.css">
+  <link rel="stylesheet" href="css/spaces.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-view="inicio" data-sub="mesa">
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Hub</div>
+      <nav class="nav" aria-label="Áreas">
+        <button data-nav="inicio">Início <kbd>1</kbd></button>
+        <button data-nav="workspace">Workspace <kbd>2</kbd></button>
+        <button data-nav="study">Studyspace <kbd>3</kbd></button>
+        <button data-nav="concursos">Concursos <kbd>4</kbd></button>
+        <button data-nav="financas">Finanças <kbd>5</kbd></button>
+        <button data-nav="atividade">Atividade <kbd>6</kbd></button>
+      </nav>
+      <span class="spacer"></span>
+      <div class="focus" id="focus"></div>
+      <button class="sync-dot" id="sync-dot" aria-label="Estado da sincronização"></button>
+      <button class="pal-trigger" id="open-palette" title="Buscar no Hub (Ctrl+K)"></button>
+      <button class="icon-btn" id="open-rest" title="Modo repouso (R)" aria-label="Modo repouso"></button>
+      <button class="icon-btn" id="open-settings" title="Ajustes (,)" aria-label="Ajustes"></button>
+    </header>
+
+    <main class="view view-inicio" aria-label="Início">
+      <section class="hero-row">
+        <div class="hero" id="hero"></div>
+        <div class="weather card" id="weather"></div>
+      </section>
+      <section class="search-row" id="search"></section>
+      <div class="home-grid">
+        <section class="links" id="links"></section>
+        <aside class="home-aside" id="home-aside">
+          <section class="card birthdays" id="birthdays" hidden></section>
+          <section class="card reading" id="reading" hidden></section>
+          <section class="card readlater" id="readlater" hidden></section>
+          <section class="card today" id="today"></section>
+          <section class="card" id="top-sites"></section>
+        </aside>
+      </div>
+    </main>
+
+    <main class="view view-workspace" aria-label="Workspace">
+      <nav class="subnav" aria-label="Workspace">
+        <button data-sub="mesa">Mesa</button>
+        <button data-sub="agenda">Agenda</button>
+        <button data-sub="cerebro">Cérebro</button>
+      </nav>
+      <section class="sub sub-mesa desk-grid" id="mesa"></section>
+      <section class="sub sub-agenda agenda-app" id="agenda"></section>
+      <section class="sub sub-cerebro brain" id="cerebro"></section>
+    </main>
+
+    <main class="view view-study study" id="studyspace" aria-label="Studyspace"></main>
+    <main class="view view-concursos exams" id="concursos" aria-label="Concursos"></main>
+    <main class="view view-financas finance" id="financas" aria-label="Finanças"></main>
+    <main class="view view-atividade activity" id="atividade" aria-label="Atividade"></main>
+  </div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>
